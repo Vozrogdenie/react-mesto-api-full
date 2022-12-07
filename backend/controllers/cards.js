@@ -2,7 +2,7 @@ import { BadRequestError, ForbiddenError, NotFoundError } from '../errors/Error.
 import Card from '../model/card.js';
 
 export function getCards(req, res, next) {
-  Card.find({}).populate(['likes', 'owner'])
+  Card.find({}).populate(['likes', 'owner']).sort({ createdAt: -1 })
     .then((cards) => res.send({ data: cards }))
     .catch((err) => {
       console.log(err.message);

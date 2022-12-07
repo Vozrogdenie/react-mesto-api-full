@@ -1,0 +1,18 @@
+.login{
+    margin: 0 auto;
+    background: black;
+    border-radius: 10px;
+    color:white;
+    width: 430px;
+    display: block;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+@media (max-width:800px) {
+    .login {
+        width: 282px;
+        min-height: 322px;
+    }
+}

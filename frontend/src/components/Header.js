@@ -1,18 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import headLogo from '../images/Mesto.png'
 
-class Header extends React.Component{
-    constructor(props) {
-        super(props);
-    }
+function Header(props) {
 
-render() {
     return (
-    <div className="header"> 
-        <img className="header__logo" src={headLogo} alt="Логотип"/>
-    </div>
+        <header className="header">
+            <img className="header__logo" src={headLogo} alt="Логотип" />
+            <div className='header__block'>
+                {props.loggedIn && <div className='header__title'>{props.userData.email}</div>}
+                <Link to={props.path} type='button' className="header__link" onClick={props.onLogout}> {props.link}</Link>
+            </div>
+        </header>
     );
-  }
 }
 
 export default Header

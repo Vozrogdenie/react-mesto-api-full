@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import routerCard from './routes/cards.js';
 import routerUser from './routes/users.js';
 import { createUser, login } from './controllers/users.js';
@@ -22,6 +23,8 @@ const run = async () => {
     PORT: 3000,
     HOST: 'localhost',
   };
+
+  app.use(cors());
   app.use(requestLogger);
   app.use(cookieParser());
   app.use(express.json());
@@ -44,14 +47,14 @@ const run = async () => {
     next(err);
   });
 
-  app.use((req, res, next) => {
-    const { origin } = req.headers;
-    if (allowedCors.includes(origin)) {
-      res.header('Access-Control-Allow-Origin', origin);
-    }
+  // app.use((req, res, next) => {
+  //   const { origin } = req.headers;
+  //   if (allowedCors.includes(origin)) {
+  //     res.header('Access-Control-Allow-Origin', origin);
+  //   }
 
-    next();
-  });
+  //   next();
+  // });
 
   mongoose.set('runValidators', true);
   await mongoose.connect('mongodb://localhost:27017/mestodb');
