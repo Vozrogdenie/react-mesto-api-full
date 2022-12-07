@@ -1,0 +1,11 @@
+.root {
+    /* display: grid; */
+    margin: 0 auto;
+    background-color: #000000;
+    color: #FFFFFF;
+    grid-template-areas: "header"
+    "profile"
+    "elements"
+    "footer";
+    max-width: 882px;
+}

@@ -1,0 +1,53 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+@import url(./blocks/all/all.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/add-button/add-button.css);
+@import url(./blocks/button/button.css);
+
+@import url(./blocks/content/content.css);
+
+
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__box/profile__box.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__icon/profile__icon.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__title/profile__title.css);
+@import url(./blocks/profile/__titleicon/profile__titleicon.css);
+@import url(./blocks/profile/__subtitle/profile__subtitle.css);
+@import url(./blocks/profile/__overlay/profile__overlay.css);
+@import url(./blocks/profile/__icon-edit/profile__icon-edit.css);
+
+
+@import url(./blocks/popup/_disabled/popup__submit-button_disabled.css);
+@import url(./blocks/popup/__input-error/_active/popup__input-error_active.css);
+@import url(./blocks/popup/__title/popup__title.css);
+@import url(./blocks/popup/__close/popup__close.css);
+@import url(./blocks/popup/__input/popup__input.css);
+@import url(./blocks/popup/__submit-button/popup__submit-button.css);
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__input/_type/popup__input_type_error.css);
+
+@import url(./blocks/elements/elements.css);
+@import url(./blocks/element/__heart/element__heart.css);
+@import url(./blocks/element/__info/element__info.css);
+@import url(./blocks/element/__item/element__item.css);
+@import url(./blocks/element/__text/element__text.css);
+@import url(./blocks/element/element.css);
+@import url(./blocks/element/__heart/__active/element__active_heart.css);
+@import url(./blocks/element/trach/element__trach.css);
+@import url(./blocks/element/__heart-count/element__heart-count.css);
+
+@import url(./blocks/popup/__container/popup__container_type_picture.css);
+@import url(./blocks/popup/__title/_type/popup__title_type_picture.css);
+@import url(./blocks/popup/popup__type_picture.css);
+
+@import url(./blocks/root/root.css);
+
+@import url(./blocks/footer/__town/footer__town.css);
+@import url(./blocks/footer/footer.css);

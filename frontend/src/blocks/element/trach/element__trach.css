@@ -1,0 +1,12 @@
+.element__trach {
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 103px;
+    cursor: pointer;
+}
+
+.element__trach:hover {
+    opacity: 0.5;
+}

@@ -1,0 +1,17 @@
+.elements {
+    display: grid;
+    grid-area: elements;
+    font-family: 'Inter', Arial, sans-serif;
+    white-space: nowrap;
+    column-gap: 17px;
+    row-gap: 20px;
+    grid-template-columns:repeat(3, minmax(auto, 282px));
+}
+
+@media all and (max-width: 910px) {
+    .elements {
+        justify-content: center;
+        grid-template-columns: repeat(1, minmax(auto, 282px));
+
+    }
+}

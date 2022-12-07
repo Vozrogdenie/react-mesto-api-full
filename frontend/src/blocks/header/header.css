@@ -1,0 +1,11 @@
+.header{
+    grid-area: header;
+    border-bottom: 1px solid rgb(84, 84, 84, 0.7);
+}
+
+@media (max-width:910px) {
+    .header {
+        max-height: 84px;
+        width: 100%;
+    }
+}

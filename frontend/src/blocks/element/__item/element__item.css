@@ -1,0 +1,8 @@
+.element__item{
+    width: 282px;
+    height: 282px;
+    object-fit: cover;
+}
+.element__item:hover{
+    cursor: pointer;
+}

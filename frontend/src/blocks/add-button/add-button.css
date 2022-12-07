@@ -1,0 +1,20 @@
+.add-button {
+    margin: 35px 0 35px 244px;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    padding: 14px 64px 14px 64px;
+    cursor: pointer;
+}
+
+@media (max-width:910px) {
+    .add-button {
+        padding: 17px 134px 17px 132px;
+        margin: 0 auto 0 auto;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.add-button:hover{
+    opacity: 0.6;
+}

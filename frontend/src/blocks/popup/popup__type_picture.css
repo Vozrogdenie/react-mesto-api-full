@@ -1,0 +1,14 @@
+.popup__type_picture {
+    display: flex;
+    background-color: #00000080;
+    opacity: 0;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
