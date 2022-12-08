@@ -1,5 +1,5 @@
 const api_headers = {
-    url: "http://localhost:3000",
+    url: "http://renaissance.front.nomoredomains.club/api",
     headers: {
         'Content-Type': 'application/json'
     }
