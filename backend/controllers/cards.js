@@ -13,8 +13,11 @@ export function getCards(req, res, next) {
 export function createCard(req, res, next) {
   const { name, link } = req.body;
 
-  Card.create({ name, link, owner: req.user._id }).populate(['likes', 'owner'])
-    .then((card) => res.send({ data: card }))
+  Card.create({ name, link, owner: req.user._id })
+    .then((card) => {
+      card.owner._id = req.user._id;
+      res.send({ data: card });
+    })
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные при создании карточки.'));
