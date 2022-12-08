@@ -1,4 +1,4 @@
-const base_url = 'http://renaissance.front.nomoredomains.club/api';
+const base_url = 'http://api.renaissance.front.nomoredomains.club/api';
 
 class Auth {
 

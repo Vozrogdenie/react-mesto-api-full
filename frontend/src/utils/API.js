@@ -1,5 +1,5 @@
 const api_headers = {
-    url: "http://renaissance.front.nomoredomains.club/api",
+    url: "http://api.renaissance.front.nomoredomains.club/api",
     headers: {
         'Content-Type': 'application/json'
     }
