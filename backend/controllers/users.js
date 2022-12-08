@@ -1,10 +1,14 @@
 import { constants } from 'http2';
 import bcrpt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import User from '../model/user.js';
 import {
   BadRequestError, ConflictError, NotFoundError,
 } from '../errors/Error.js';
+
+dotenv.config();
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 export const getUsers = (req, res, next) => {
   User.find({})
@@ -124,7 +128,7 @@ export const login = (req, res, next) => {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       return res.send({ token });
     })
     .catch((err) => {

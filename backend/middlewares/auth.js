@@ -1,5 +1,9 @@
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import { UnauthorizedError } from '../errors/Error.js';
+
+dotenv.config();
+const { JWT_SECRET } = process.env;
 
 const handleAuthError = (next) => next(new UnauthorizedError('Необходима авторизация'));
 
@@ -18,7 +22,7 @@ export default function auth(req, res, next) {
   let payload;
 
   try {
-    payload = jwt.verify(token, 'some-secret-key');
+    payload = jwt.verify(token, JWT_SECRET);
     req.user = payload;
     return next();
   } catch (err) {
