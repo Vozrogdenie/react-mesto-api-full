@@ -15,7 +15,8 @@ export function createCard(req, res, next) {
 
   Card.create({ name, link, owner: req.user._id })
     .then((card) => {
-      card.toObject().owner._id = req.user._id;
+      card = cardDocument.toObject();
+      card.owner = {_id: req.user._id};
       res.send({ data: card });
     })
     .catch((err) => {
