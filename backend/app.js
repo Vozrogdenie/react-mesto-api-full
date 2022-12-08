@@ -27,7 +27,7 @@ const run = async () => {
   app.use(requestLogger);
   app.use(cookieParser());
   app.use(express.json());
-  app.get('/crash-test', () => {
+  app.get('/api/crash-test', () => {
     setTimeout(() => {
       throw new Error('Сервер сейчас упадёт');
     }, 0);
