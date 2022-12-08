@@ -27,6 +27,11 @@ const run = async () => {
   app.use(requestLogger);
   app.use(cookieParser());
   app.use(express.json());
+  app.get('/crash-test', () => {
+    setTimeout(() => {
+      throw new Error('Сервер сейчас упадёт');
+    }, 0);
+  });
   app.post('/api/signup', validateCreateUser, createUser);
   app.post('/api/signin', validateLogin, login);
   app.use('/api/users', routerUser);
