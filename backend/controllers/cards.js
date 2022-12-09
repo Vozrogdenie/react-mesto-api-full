@@ -1,4 +1,6 @@
-import { BadRequestError, ForbiddenError, NotFoundError } from '../errors/Error.js';
+import BadRequestError from '../errors/BadRequestError.js';
+import ForbiddenError from '../errors/ForbidenError.js';
+import NotFoundError from '../errors/NotFoundError.js';
 import Card from '../model/card.js';
 
 export function getCards(req, res, next) {
@@ -16,9 +18,9 @@ export function createCard(req, res, next) {
   Card.create({ name, link, owner: req.user._id })
     .then((card) => {
       const cardDocument = card;
-      card = cardDocument.toObject();
-      card.owner = {_id: req.user._id};
-      res.send({ data: card });
+      const newCard = cardDocument.toObject();
+      newCard.owner = { _id: req.user._id };
+      res.send({ data: newCard });
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

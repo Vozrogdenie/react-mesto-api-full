@@ -3,9 +3,9 @@ import bcrpt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import User from '../model/user.js';
-import {
-  BadRequestError, ConflictError, NotFoundError,
-} from '../errors/Error.js';
+import BadRequestError from '../errors/BadRequestError.js';
+import ConflictError from '../errors/ConflictError.js';
+import NotFoundError from '../errors/NotFoundError.js';
 
 dotenv.config();
 const { NODE_ENV, JWT_SECRET } = process.env;

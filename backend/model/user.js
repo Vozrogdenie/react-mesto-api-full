@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import bcrpt from 'bcryptjs';
 import { regExpUrl, regExpEmail } from '../utils/regex.js';
-import { UnauthorizedError } from '../errors/Error.js';
+import UnauthorizedError from '../errors/UnauthorizedError.js';
 
 const userSchema = new mongoose.Schema({
   name: {

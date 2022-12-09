@@ -1,6 +1,6 @@
 import { constants } from 'http2';
 
-export class UnauthorizedError extends Error {
+export default class UnauthorizedError extends Error {
   constructor(message) {
     super(message);
     this.name = 'UnauthorizedError';

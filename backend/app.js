@@ -7,9 +7,10 @@ import routerCard from './routes/cards.js';
 import routerUser from './routes/users.js';
 import { createUser, login } from './controllers/users.js';
 import { validateCreateUser, validateLogin } from './validation/users.js';
-import { NotFoundError } from './errors/NotFoundError.js';
+import NotFoundError from './errors/NotFoundError.js';
 import requestLogger from './middlewares/logger.js';
 import errorLogger from './middlewares/error.js';
+import auth from './middlewares/auth.js';
 
 const run = async () => {
   process.on('unhandledRejection', (err) => {
@@ -36,9 +37,9 @@ const run = async () => {
   app.post('/api/signin', validateLogin, login);
   app.use('/api/users', routerUser);
   app.use('/api/cards', routerCard);
+  app.all('*', auth, (req, res, next) => next(new NotFoundError('Запрашиваемая страница не найдена')));
   app.use(errorLogger);
   app.use(errors());
-  app.all('*', (req, res, next) => next(new NotFoundError('Запрашиваемая страница не найдена')));
   app.use((err, req, res, next) => {
     const { statusCode = 500, message } = err;
     res
